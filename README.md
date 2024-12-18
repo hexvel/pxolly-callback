@@ -20,7 +20,7 @@ A FastAPI-based callback server for handling Pxolly interactions with VK integra
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/pxolly-callback.git
+git clone https://github.com/hexvel/pxolly-callback.git
 cd pxolly-callback
 ```
 
