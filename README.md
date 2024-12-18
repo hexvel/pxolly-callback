@@ -1,4 +1,4 @@
-# Pxolly IRIS Callback
+# Pxolly Callback
 
 A FastAPI-based callback server for handling Pxolly interactions with VK integration.
 
