@@ -1,0 +1,10 @@
+{
+    "access_token": "",
+    "pxolly": {
+        "api_token": "",
+        "secret_key": ""
+    },
+    "iris": {
+        "secret_key": ""
+    }
+}
