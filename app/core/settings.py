@@ -7,7 +7,6 @@ class Settings(BaseSettings):
     VK_TOKEN: str
     PXOLLY_API_TOKEN: str
     PXOLLY_SECRET_KEY: str
-    IRIS_SECRET_KEY: str
 
     class Config:
         env_file = ".env"
@@ -20,11 +19,6 @@ settings = Settings()
 def get_pxolly_settings() -> dict:
     with open("app/settings.json", "r", encoding="utf-8") as f:
         return json.load(f)["pxolly"]
-
-
-def get_iris_settings() -> dict:
-    with open("app/settings.json", "r", encoding="utf-8") as f:
-        return json.load(f)["iris"]
 
 
 def get_vk_token() -> str:

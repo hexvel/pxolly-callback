@@ -1,6 +1,5 @@
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from loguru import logger
 from vkbottle import API
 
 from app.dependencies.vk_api import get_vk_api
@@ -47,9 +46,3 @@ async def pxolly_callback(
         return JSONResponse(content=response, status_code=200)
 
     return JSONResponse(content={"ok": True, "code": "b6c60110"}, status_code=200)
-
-
-@router.post("/iris/callback", response_model=None)
-async def pxolly_subscribe(request: Request) -> JSONResponse:
-    logger.warning(request)
-    return JSONResponse(content="b6c60110", status_code=200)
