@@ -65,8 +65,7 @@ The server will start on `http://127.0.0.1:8000`
 
 ```
 pxolly-callback/
-706623b2138064bb1ad1
-      # Core functionality
+├── app/               # Application code
 │   ├── dependencies/   # Dependency injection
 │   ├── handlers/       # Command handlers
 │   ├── schemas/        # Pydantic models
