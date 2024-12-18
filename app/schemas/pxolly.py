@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -86,6 +86,15 @@ class PXollyCallbackObject(BaseModel):
         default=None,
     )
     message: Optional[PXollyCallbackMessage] = Field(
+        default=None,
+    )
+    conversation_message_ids: Optional[List[int]] = Field(
+        default=None,
+    )
+    photo_url: Optional[str] = Field(
+        default=None,
+    )
+    is_remove: Optional[int] = Field(
         default=None,
     )
     payload: Optional[str] = Field(

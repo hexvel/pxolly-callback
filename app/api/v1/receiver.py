@@ -5,7 +5,9 @@ from vkbottle import API
 
 from app.dependencies.vk_api import get_vk_api
 from app.handlers.decorator import bot
+from app.handlers.pxolly.chat_photo_update import chat_photo_update_handler
 from app.handlers.pxolly.confirmation import handle_confirmation
+from app.handlers.pxolly.delete_for_all import handle_delete_for_all
 from app.handlers.pxolly.invite_user import handle_invite_user
 from app.handlers.pxolly.sync import handle_sync
 from app.schemas.pxolly import PXollyCallback
@@ -25,6 +27,12 @@ async def pxolly_callback(
 
     if data.type == "invite_user":
         return await handle_invite_user(data, api)
+
+    if data.type == "delete_for_all":
+        return await handle_delete_for_all(data, api)
+
+    if data.type == "chat_photo_update":
+        return await chat_photo_update_handler(data, api)
 
     if data.type == "bot_command":
         response = await bot.handle_event(data, api)
