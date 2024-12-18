@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from loguru import logger
 
 from app.api.v1.receiver import router as receiver_router
+
+logger.disable("vkbottle")
 
 
 async def lifespan(app: FastAPI) -> None:

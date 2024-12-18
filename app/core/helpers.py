@@ -1,8 +1,8 @@
-from app.http import VKAPIClient
+from vkbottle import API
 
 
 async def search_peer(
-    api: VKAPIClient, text: str, from_id: int, date: int, conversation_message_id: int
+    api: API, text: str, from_id: int, date: int, conversation_message_id: int
 ):
     code = """
         var e = 2000000000;
@@ -27,9 +27,9 @@ async def search_peer(
         return false;
     """
 
-    peer = await api.execute(
+    peer = await api.request(
         method="execute",
-        params={
+        data={
             "code": code,
             "text": text,
             "from_id": from_id,
