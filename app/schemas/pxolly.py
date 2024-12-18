@@ -100,6 +100,9 @@ class PXollyCallbackObject(BaseModel):
     payload: Optional[str] = Field(
         default=None,
     )
+    style: Optional[str] = Field(
+        default=None,
+    )
     bot_prefix: Optional[str] = Field(
         default=None,
     )
