@@ -9,6 +9,7 @@ from app.handlers.pxolly.chat_photo_update import chat_photo_update_handler
 from app.handlers.pxolly.confirmation import handle_confirmation
 from app.handlers.pxolly.delete_for_all import handle_delete_for_all
 from app.handlers.pxolly.invite_user import handle_invite_user
+from app.handlers.pxolly.reset_theme import reset_theme_handler
 from app.handlers.pxolly.set_theme import set_theme_handler
 from app.handlers.pxolly.sync import handle_sync
 from app.schemas.pxolly import PXollyCallback
@@ -37,6 +38,9 @@ async def pxolly_callback(
 
     if data.type == "set_theme":
         return await set_theme_handler(data, api)
+
+    if data.type == "reset_theme":
+        return await reset_theme_handler(data, api)
 
     if data.type == "bot_command":
         response = await bot.handle_event(data, api)
