@@ -18,14 +18,6 @@ async def prefix_handler(event: PXollyCallback, api: API):
         )
         return {"ok": True}
 
-    if len(prefix[2].strip()) < 2:
-        await api.messages.edit(
-            peer_id=event.object.chat_local_id + 2000000000,
-            message=f"{Emoji.WARNING} Префикс не может быть короче 2 символов.",
-            cmid=event.object.message.conversation_message_id,
-        )
-        return {"ok": True}
-
     await api.http_client.request_json(
         url="https://api.pxolly.ru/m/callback.setBotPrefix",
         method="POST",
