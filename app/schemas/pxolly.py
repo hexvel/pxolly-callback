@@ -15,6 +15,24 @@ class PXollyCallbackUser(BaseModel):
     )
 
 
+class PXollyCallbackReplyMessage(BaseModel):
+    date: Optional[int] = Field(
+        default=None,
+    )
+    conversation_message_id: Optional[int] = Field(
+        default=None,
+    )
+    from_id: Optional[int] = Field(
+        default=None,
+    )
+    text: Optional[str] = Field(
+        default=None,
+    )
+    has_attachments: Optional[int] = Field(
+        default=None,
+    )
+
+
 class PXollyCallbackMessage(BaseModel):
     date: Optional[int] = Field(
         default=None,
@@ -26,6 +44,12 @@ class PXollyCallbackMessage(BaseModel):
         default=None,
     )
     text: Optional[str] = Field(
+        default=None,
+    )
+    has_attachments: Optional[int] = Field(
+        default=None,
+    )
+    reply_message: Optional[PXollyCallbackReplyMessage] = Field(
         default=None,
     )
 
@@ -65,6 +89,9 @@ class PXollyCallbackObject(BaseModel):
         default=None,
     )
     payload: Optional[str] = Field(
+        default=None,
+    )
+    bot_prefix: Optional[str] = Field(
         default=None,
     )
 
