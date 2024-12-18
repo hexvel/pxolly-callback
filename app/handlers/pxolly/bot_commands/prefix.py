@@ -29,7 +29,7 @@ async def prefix_handler(event: PXollyCallback, api: API):
 
     await api.messages.edit(
         peer_id=event.object.chat_local_id + 2000000000,
-        message=f"{Emoji.OK} Префикс обновлён на: {prefix[2].strip()}.",
+        message=f"{Emoji.OK} Префикс обновлён на: {prefix[2].strip()}",
         cmid=event.object.message.conversation_message_id,
     )
     return {"ok": True}
